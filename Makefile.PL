@@ -10,7 +10,7 @@ WriteMakefile(
 	MIN_PERL_VERSION => '5.005',
 	META_MERGE => {
 		resources => {
-			repository => 'http://svn.ali.as/cpan/trunk/CSS-Tiny',
+			repository => 'https://github.com/chorny/CSS-Tiny',
 		},
 	},
 	NAME      => 'CSS::Tiny',
