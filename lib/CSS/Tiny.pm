@@ -5,7 +5,7 @@ package CSS::Tiny;
 use strict;
 BEGIN {
 	require 5.005;
-	$CSS::Tiny::VERSION = '1.19';
+	$CSS::Tiny::VERSION = '1.20';
 	$CSS::Tiny::errstr  = '';
 }
 
