@@ -50,7 +50,6 @@ sub WriteMakefile {  #Written by Alexandr Ciornii, version 0.21. Added by eumm-u
 	delete $params{MIN_PERL_VERSION} if $eumm_version < 6.48;
 	delete $params{META_MERGE} if $eumm_version < 6.46;
 	delete $params{LICENSE} if $eumm_version < 6.31;
-	delete $params{AUTHOR} if $] < 5.005;
 
 	ExtUtils::MakeMaker::WriteMakefile(%params);
 }
