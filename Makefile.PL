@@ -17,7 +17,7 @@ WriteMakefile(
 	VERSION_FROM  => 'lib/CSS/Tiny.pm',
 	PREREQ_PM => {
 	},
-	BUILD_REQUIRES => {
+	TEST_REQUIRES => {
 		'Test::More' => '0.47',
 	},
 	AUTHOR  => 'Adam Kennedy <adamk@cpan.org>',
@@ -39,6 +39,10 @@ sub WriteMakefile {  #Written by Alexandr Ciornii, version 0.21. Added by eumm-u
 	my %params=@_;
 	my $eumm_version=$ExtUtils::MakeMaker::VERSION;
 	$eumm_version=eval $eumm_version;
+    if ($params{TEST_REQUIRES} and $eumm_version < 6.64) {
+        $params{BUILD_REQUIRES}={ %{$params{BUILD_REQUIRES} || {}} , %{$params{TEST_REQUIRES}} };
+        delete $params{TEST_REQUIRES};
+    }
 	if ( $params{BUILD_REQUIRES} and $eumm_version < 6.5503 ) {
 		#EUMM 6.5502 has problems with BUILD_REQUIRES
 		$params{PREREQ_PM} = {
